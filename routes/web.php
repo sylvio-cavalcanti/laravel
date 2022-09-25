@@ -13,6 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () { // (uri, callback)
+//     return view('Olá, seja bem vindo ao curso!');
+// });
+// Route::get('/sobre-nos', function () {
+//     return view('Sobre-nós');
+// });
+// Route::get('/contato', function () {
+//     return view('Contato');
+// });
+
+Route::get('/', 'PrincipalController@principal');
+
+Route::get('/sobre-nos', 'SobreNosController@sobreNos');
+
+Route::get('/contato', 'ContatoController@contato');
+
+/*
+VERBOS HTTP:
+
+get
+post
+put
+patch
+delete
+options
+
+*/
