@@ -33,7 +33,7 @@ Route::get('/contato', 'ContatoController@contato');
 // Nome, categoria, assunto, mensagem
 Route::get(
     '/contato/{nome}/{categoria}/{assunto}/{mensagem?}', 
-    function (string $nome, string $categoria, string $assunto, string $mensagem) {
+    function (string $nome, string $categoria, string $assunto, string $mensagem = 'Mensagem não informada') {
     echo "Meu nome é: $nome - $categoria - $assunto - $mensagem";
 });
 
