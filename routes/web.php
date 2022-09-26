@@ -29,6 +29,15 @@ Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 
 Route::get('/contato', 'ContatoController@contato');
 
+// Parâmetros necessarios para essa rota:
+// Nome, categoria, assunto, mensagem
+Route::get(
+    '/contato/{nome}/{categoria}/{assunto}/{mensagem?}', 
+    function (string $nome, string $categoria, string $assunto, string $mensagem) {
+    echo "Meu nome é: $nome - $categoria - $assunto - $mensagem";
+});
+
+
 /*
 VERBOS HTTP:
 
