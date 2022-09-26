@@ -13,15 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () { // (uri, callback)
-//     return view('Olá, seja bem vindo ao curso!');
-// });
-// Route::get('/sobre-nos', function () {
-//     return view('Sobre-nós');
-// });
-// Route::get('/contato', function () {
-//     return view('Contato');
-// });
 
 Route::get('/', 'PrincipalController@principal');
 
@@ -29,18 +20,18 @@ Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 
 Route::get('/contato', 'ContatoController@contato');
 
-// Parâmetros necessarios para essa rota:
-// Nome, categoria, assunto, mensagem
+// 'categoria' na pratica seria um select com as possibilidades
 Route::get(
-    '/contato/{nome?}/{categoria?}/{assunto?}/{mensagem?}', 
+    '/contato/{nome}/{categoria_id}', 
     function (
         string $nome = 'Desconhecido', 
-        string $categoria = 'Informação' , 
-        string $assunto = 'Contato', 
-        string $mensagem = 'Mensagem não informada'
+        int $categoria_id = 1 // O default é um inteiro. 1 - 'Informação' 
     ) {
-    echo "Meu nome é: $nome - $categoria - $assunto - $mensagem";
-});
+        echo "Meu nome é: $nome - $categoria_id";
+    }
+)->where('categoria_id', '[0-9]+')->where('nome', '[A-Za-z]+'); 
+// Primeiro Where: pelo menos um 1, valor númerico 
+// Segundo Where: pelo menos um caractere de A - Z maiusculo ou minusculo
 
 
 /*
