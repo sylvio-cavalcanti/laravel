@@ -20,6 +20,13 @@ Route::get('/sobre-nos', 'SobreNosController@sobreNos');
 
 Route::get('/contato', 'ContatoController@contato');
 
+Route::get('/login', fn() => 'Login');// PHP arrow function
+
+Route::get('/clientes', fn() => 'Clientes');
+
+Route::get('/produtos', fn() => 'Produtos');
+
+
 // 'categoria' na pratica seria um select com as possibilidades
 // Route::get(
 //     '/contato/{nome}/{categoria_id}', 
