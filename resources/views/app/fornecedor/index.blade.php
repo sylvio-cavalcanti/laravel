@@ -2,19 +2,31 @@
 
 @php
     /*
-        if(isset($variavel)) {
-            // Exemplo de uso do método isset do php
-            // o isset retorna true se a var. estiver definida
+        if(empty($variavel)) {
+            Se a variavel estiver vazia/sem valor, o método empty retorna TRUE.
+            No PHP uam  variável está vazia quando ela é atribuído o seguinte os valores:
+            - ''
+            - 0
+            - 0.0
+            - '0'
+            - null
+            - false
+            - array(), um array vazio
+            - $var, variavel declarada mas sem atribuição de um valor
         }  
     */
 @endphp
 
 @isset($fornecedores) <!-- So entra nesse bloco de codigo, se a variavel existe --> 
-    Fornecedor: {{ $fornecedores[1]['nome'] }}
+    Fornecedor: {{ $fornecedores[0]['nome'] }}
     <br>
-    Status: {{ $fornecedores[1]['status'] }}
+    Status: {{ $fornecedores[0]['status'] }}
     <br>
-    @isset($fornecedores[1]['cnpj']) <!-- Verifica se o índice existe --> 
-        CNPJ: {{ $fornecedores[1]['cnpj'] }}
+    @isset($fornecedores[0]['cnpj']) <!-- Verifica se o índice existe --> 
+        CNPJ: {{ $fornecedores[0]['cnpj'] }}
+        @empty($fornecedores[0]['cnpj'])
+            - Vazio
+        @endempty
+
     @endisset
 @endisset
