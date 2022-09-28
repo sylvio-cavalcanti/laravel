@@ -1,14 +1,20 @@
 <h3>Fornecedor.</h3>
-{{-- @dd($fornecedores) --}}
 
-Fornecedor: {{ $fornecedores[0]['nome'] }}
-<br>
-Status: {{ $fornecedores[0]['status'] }}
-<br>
-@if ( !($fornecedores[0]['status'] == 'S') ) <!-- IF Executa se o retorno da condição for TRUE --> 
-    Fornecedor inativo.
-@endif
-<br>
-@unless ($fornecedores[0]['status'] == 'S') <!-- UNLESS  Executa se o retorno da condição for FALSE --> 
-    Fornecedor inativo.
-@endunless
+@php
+    /*
+        if(isset($variavel)) {
+            // Exemplo de uso do método isset do php
+            // o isset retorna true se a var. estiver definida
+        }  
+    */
+@endphp
+
+@isset($fornecedores) <!-- So entra nesse bloco de codigo, se a variavel existe --> 
+    Fornecedor: {{ $fornecedores[1]['nome'] }}
+    <br>
+    Status: {{ $fornecedores[1]['status'] }}
+    <br>
+    @isset($fornecedores[1]['cnpj']) <!-- Verifica se o índice existe --> 
+        CNPJ: {{ $fornecedores[1]['cnpj'] }}
+    @endisset
+@endisset
