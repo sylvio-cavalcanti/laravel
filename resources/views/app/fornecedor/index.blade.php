@@ -2,10 +2,6 @@
 
 @isset($fornecedores)
     @forelse($fornecedores as $indice => $fornecedor)
-        {{-- @php
-            var_dump($loop);
-        @endphp --}}
-        @dd($loop)
         <br>
         Fornecedor: {{ $fornecedor['nome'] }}
         <br>
