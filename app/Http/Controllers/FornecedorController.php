@@ -10,14 +10,14 @@ class FornecedorController extends Controller
         $fornecedores = [
             0 =>[  'nome' => 'Fornecedor 1', 
                     'status' => 'N',
-                    'cnpj' => null,
+                    'cnpj' => '35438438354354',
                     'ddd' => '11', // São Paulo (SP)
                     'telefone' => '0000-0000'
                 ],
             1 =>[  
                 'nome' => 'Fornecedor 2', 
                 'status' => 'S',
-                'cnpj' => null,
+                'cnpj' => '654354354354354',
                 'ddd' => '85', // Fortaleza (CE)
                 'telefone' => '0000-0000'
             ],
