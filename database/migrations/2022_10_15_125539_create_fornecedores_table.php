@@ -26,7 +26,11 @@ class CreateFornecedoresTable extends Migration
      * @return void
      */
     public function down()
-    {
+    {   
+        // Remove uma tabela
+        // Schema::drop('fornecedores');
+        
+        // Verifica se a tabela existe, antes de remover a tabela
         Schema::dropIfExists('fornecedores');
     }
 }
