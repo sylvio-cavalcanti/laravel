@@ -18,6 +18,7 @@ Route::get('/', 'PrincipalController@principal')->name('site.index');
 Route::get('/sobre-nos', 'SobreNosController@sobreNos')->name('site.sobrenos');
 Route::get('/contato', 'ContatoController@contato')->name('site.contato');
 Route::post('/contato', 'ContatoController@contato')->name('site.contato');
+Route::get('/sylvio', 'sylvioController@sylvio')->name('site.sylvio');
 Route::get('/login', fn() => 'Login')->name('site.login');
 
 Route::prefix('/app')->group(function(){ 
