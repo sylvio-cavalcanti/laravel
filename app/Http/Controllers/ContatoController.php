@@ -32,11 +32,12 @@ class ContatoController extends Controller
     public function salvar(Request $request) {
         // Realizar a validação dos dados do formulário recebidos no request
         $request->validate([
-            'nome' => 'required',
-            'telefone' => 'required',
-            'email' => 'required',
-            'motivo_contato' => 'required',
-            'mensagem' => 'required'
+            // Nomes com no mínimo 3 caracteres e no máximo 40
+            'nome' => 'required|min:3|max:40', 
+            // 'telefone' => 'required',
+            // 'email' => 'required',
+            // 'motivo_contato' => 'required',
+            // 'mensagem' => 'required'
         ]);
         // OBS: Usar array associativa com cada input em vez de '$resquest->all' 
         // SiteContato::create(['nome'=> $request->nome, ]);
