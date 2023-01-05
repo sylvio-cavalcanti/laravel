@@ -23,9 +23,23 @@ class ContatoController extends Controller
         // print_r($contato->getAttributes());
         // $contato->save();
 
-        $contato = new SiteContato();
-        $contato->create($request->all());
+        // $contato = new SiteContato();
+        // $contato->create($request->all());
 
         return view('site.contato', ['titulo' => 'Contato (teste)']);
+    }
+
+    public function salvar(Request $request) {
+        // Realizar a validação dos dados do formulário recebidos no request
+        $request->validate([
+            'nome' => 'required',
+            'telefone' => 'required',
+            'email' => 'required',
+            'motivo_contato' => 'required',
+            'mensagem' => 'required'
+        ]);
+        // OBS: Usar array associativa com cada input em vez de '$resquest->all' 
+        // SiteContato::create(['nome'=> $request->nome, ]);
+        SiteContato::create($request->all());
     }
 }
