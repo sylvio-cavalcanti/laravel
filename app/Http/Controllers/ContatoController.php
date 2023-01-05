@@ -34,10 +34,10 @@ class ContatoController extends Controller
         $request->validate([
             // Nomes com no mínimo 3 caracteres e no máximo 40
             'nome' => 'required|min:3|max:40', 
-            // 'telefone' => 'required',
-            // 'email' => 'required',
-            // 'motivo_contato' => 'required',
-            // 'mensagem' => 'required'
+            'telefone' => 'required',
+            'email' => 'required',
+            'motivo_contato' => 'required',
+            'mensagem' => 'required|max:2000'
         ]);
         // OBS: Usar array associativa com cada input em vez de '$resquest->all' 
         // SiteContato::create(['nome'=> $request->nome, ]);
