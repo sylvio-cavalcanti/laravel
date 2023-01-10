@@ -19,7 +19,7 @@ class ContatoController extends Controller
         // dd($request->all());
         $request->validate([
             // Nomes com no mínimo 3 caracteres e no máximo 40
-            'nome' => 'required|min:3|max:40', 
+            'nome' => 'required|min:3|max:40|unique:site_contatos', 
             'telefone' => 'required',
             'email' => 'email',
             'motivo_contatos_id' => 'required',
